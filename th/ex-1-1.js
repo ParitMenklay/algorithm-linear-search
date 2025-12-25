@@ -10,9 +10,23 @@
 */
 
 // Start coding here
+function findNumberIndex(numbers, targetNumber) {
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] === targetNumber) {
+      return i;
+    }
+  }
+  return -1;
+}
 
 const numbers1 = [10, 30, 5, 20, 55];
 console.log(findNumberIndex(numbers1, 55)); // 4
 
 const numbers2 = [300, -145, 200, 0, 100];
 console.log(findNumberIndex(numbers2, 2)); // -1
+
+//คำถามที่ฝากไว้ .map(), .filter(), .reduce() ใช่ linear search รึเปล่า
+//ไม่เป็น เพราะ 3 ตัวนี้เมื่อเจอข้อมูลที่กำหนดแล้วจะไม่หยุด loop แต่จะทำงานจนครบทุกตัวใน array
+
+//.indexOf() หรือ .findIdex()
+//เป็น linear search เพราะ หลัการเดียวกับการใช้ loop ถ้าเจอข้อมูลแล้วหยด loop ทั้นที และคือค่า index มา แต่ถ้าไม่เจอจะคืนค่า -1
